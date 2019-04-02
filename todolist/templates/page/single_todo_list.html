@@ -1,0 +1,42 @@
+{% extends "page/base.html" %}
+{% block content %}
+
+<p>{{ single_todo_list }}</p>
+
+<form action="{% url 'todolist:single_todo_list' single_todo_list.id %}"  method="post">
+    {% csrf_token %}
+
+
+<ul>
+
+    {% for item in items_to_that_list %}
+
+    <li>
+
+
+  <input type="checkbox" name="{{ item.name }}" id="{{ item.id }}" value="completed"> {{ item.name }}<br>
+
+        <p>{{ item.description }} ,<br>
+            Has this item been completed :  {{ item.done }}, <br>
+            Due date: {{ item.due_date }}, <br>
+            Days Left: {{ item.days_left }} days
+        </p>
+
+    </li>
+
+    {% empty %}
+
+    <li>
+        There are no items for this List
+    </li>
+
+    {% endfor %}
+
+</ul>
+
+
+    <input type="submit" value="Submit">
+
+</form>
+
+{% endblock content %}

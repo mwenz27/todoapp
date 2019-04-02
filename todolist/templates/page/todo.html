@@ -1,0 +1,24 @@
+{% extends "page/base.html" %}
+{% block content %}
+
+
+
+<p>The TODO lists: </p>
+
+<ul>
+
+    {% for todo_list in complete_list %}
+
+    <li><a href="{% url 'todolist:single_todo_list' todo_list.id %}">{{ todo_list.title }}</a></li>
+
+    {% empty %}
+
+        <li>No topics have been added yet.</li>
+
+    {% endfor %}
+
+
+</ul>
+
+
+{% endblock content %}
