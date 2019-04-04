@@ -3,8 +3,7 @@
 
 <p>{{ single_todo_list }}</p>
 
-<form action="{% url 'todolist:single_todo_list' single_todo_list.id %}"  method="post">
-    {% csrf_token %}
+
 
 
 <ul>
@@ -13,8 +12,10 @@
 
     <li>
 
+<form action="{% url 'todolist:single_todo_list' single_todo_list.id %}"  method="post">
+    {% csrf_token %}
 
-  <input type="checkbox" name="{{ item.name }}" id="{{ item.id }}" value="completed"> {{ item.name }}<br>
+  <input type="checkbox" name="item_id" id="{{ item.id }}" value="{{ item.id }}"> {{ item.name }}<br>
 
         <p>{{ item.description }} ,<br>
             Has this item been completed :  {{ item.done }}, <br>
@@ -32,11 +33,14 @@
 
     {% endfor %}
 
-</ul>
-
-
     <input type="submit" value="Submit">
 
 </form>
+
+</ul>
+
+
+
+
 
 {% endblock content %}
