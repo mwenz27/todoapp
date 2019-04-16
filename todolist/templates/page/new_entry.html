@@ -1,5 +1,6 @@
 {% extends "page/base.html" %}
 {% block content %}
+<div class="container">
 <h3>
     <a href="{% url 'todolist:single_todo_list' todolist.id %}">{{ todolist }}</a>
 
@@ -15,5 +16,5 @@
 
 
 </form>
-
+</div>
 {% endblock content %}

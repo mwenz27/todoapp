@@ -22,6 +22,7 @@ class TodoItemForm(forms.ModelForm):
         fields = ['name', 'description', 'due_date']
         labels = {'name': 'Please enter a new item of this',
                   'description': 'Small blurb about this the item',
-                  'due_date': 'Enter a due date'}
+                  'due_date': 'Enter a due date Y-M-D'}
+
 
 

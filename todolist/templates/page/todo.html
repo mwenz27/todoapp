@@ -2,25 +2,35 @@
 {% block content %}
 
 
+<div class="container">
+    <br>
+    <br>
+    <h4>The TODO lists: </h4>
+    <div class="container">
 
-<p>The TODO lists: </p>
+        <table class="table table-striped">
+            <thead>
 
-<ul>
+    <ul>
 
-    {% for todo_list in complete_list %}
+        {% for todo_list in complete_list %}
 
-    <li><a href="{% url 'todolist:single_todo_list' todo_list.id %}">{{ todo_list.title }}</a></li>
+        <li><a href="{% url 'todolist:single_todo_list' todo_list.id %}">{{ todo_list.title }}</a></li>
 
-    {% empty %}
+        {% empty %}
 
-        <li>No topics have been added yet.</li>
+            <li>No topics have been added yet.</li>
 
-    {% endfor %}
-
-
-</ul>
-
- <a href="{% url 'todolist:new_topic' %}">Add a new Todo Topic on the List</a>
+        {% endfor %}
 
 
+    </ul>
+            </thead>
+        </table>
+
+    </div>
+    <div class="container">
+     <a href="{% url 'todolist:new_topic' %}">Add a new Todo Topic on the List</a>
+    </div>
+</div>
 {% endblock content %}

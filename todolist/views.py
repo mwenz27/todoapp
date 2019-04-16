@@ -24,7 +24,7 @@ def todo(request):
 
 def single_todo_list(request, title_id):
     if request.method == 'POST':
-        # print('########', request.POST)
+        print('########', request.POST)
         # print('##title ID', title_id)
         r = request.POST.getlist("item_id") # use this getlist, this creates a new name
         # pull items.ids,  and use python code
