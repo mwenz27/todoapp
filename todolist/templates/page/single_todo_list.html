@@ -25,6 +25,8 @@
 
     </li>
 
+    <input type="submit" value="Submit">
+
     {% empty %}
 
     <li>
@@ -33,11 +35,16 @@
 
     {% endfor %}
 
-    <input type="submit" value="Submit">
+
 
 </form>
 
 </ul>
+
+<p>
+    <a href="{% url 'todolist:new_entry' single_todo_list.id %}">Add a new entry</a>
+</p>
+
 
 
 

@@ -1,0 +1,14 @@
+{% extends "page/base.html" %}
+{% block content %}
+
+<p> Add a new Topic to your TodoList </p>
+
+<form action="{% url 'todolist:new_topic' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit"> add this Topic </button>
+
+
+</form>
+
+{% endblock content %}

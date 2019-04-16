@@ -21,11 +21,11 @@ class TodoList(models.Model):
 
 
 class TodoItem(models.Model):
-    todolist = models.ForeignKey(TodoList, on_delete=models.CASCADE)
-    name = models.CharField(max_length=200)
-    description = models.TextField()
+    todolist = models.ForeignKey(TodoList, on_delete=models.CASCADE)  #  need the foreign key
+    name = models.CharField(max_length=200)  # need for form
+    description = models.TextField()  # need for form
     date_created = models.DateTimeField(auto_now_add=True)
-    due_date = models.DateField()
+    due_date = models.DateField()  # need for form
     done = models.BooleanField(default=False)
 
     def __str__(self):

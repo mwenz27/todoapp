@@ -1,0 +1,18 @@
+{% extends "page/base.html" %}
+{% block content %}
+<h3>
+    <a href="{% url 'todolist:single_todo_list' todolist.id %}">{{ todolist }}</a>
+
+</h3>
+<p>Edit the entry</p>
+
+<form action="{% url 'todolist:edit_entry' entry.id %}" method="post">
+
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit"> add this item </button>
+
+
+</form>
+
+{% endblock content %}

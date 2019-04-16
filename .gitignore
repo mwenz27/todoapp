@@ -1,5 +1,4 @@
 .env4_todoapp
-db.sqlite3
 secrets.py
 __pycache__
 .DS_Store
